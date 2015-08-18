@@ -16,14 +16,11 @@ end
 
 
 get '/api/songs' do
-
   Song.all.to_json
-
 end
 
 get'/api/songs/:id' do
   puts params
-
   Song.find(params[:id]).to_json
 end
 

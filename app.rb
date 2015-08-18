@@ -7,15 +7,11 @@ ActiveRecord::Base.establish_connection(
 )
 
 get '/' do
-
-
-
   @cat = Cat.new
   @cat.name = 'PANTHAMOS'
   @cat.breed = 'DESTROYER OF WORLDS'
   @cat.save
   @cat.to_json
-
 end
 
 
@@ -40,9 +36,7 @@ Cat.create({
 end
 
 patch '/api/cats/:id' do
-
   cat_args = { :name => params[:name], :breed => params[:breed] }
-
   @cat = Cat.find(params[:id])
   @cat.update(cat_args)
   @cat.to_json
